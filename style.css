@@ -1,1 +1,70 @@
-body url(background-colour)
+body {
+  background-color: #3498db;
+  animation: colorChange 3s infinite alternate;
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #3498db;
+  }
+  100% {
+    background-color: #e74c3c;
+  }
+}
+
+h1 {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.slideshow {
+  display: inline-block;
+  position: relative;
+  font-size: 2rem;
+  animation: slideAnimation 6s infinite;
+}
+
+.slideshow span {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow span:nth-child(1) {
+  animation: textAnimation 6s infinite;
+}
+
+.slideshow span:nth-child(2) {
+  animation: textAnimation 6s infinite 2s; /* Delayed animation */
+}
+
+.slideshow span:nth-child(3) {
+  animation: textAnimation 6s infinite 4s; /* Delayed animation */
+}
+
+@keyframes slideAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  20%,
+  80% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes textAnimation {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+}
